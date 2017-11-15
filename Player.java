@@ -58,17 +58,17 @@ public class Player implements Runnable {
 	public void run() {
 		/* STEP-12: write code to take a lock on gameData using lock1 */ 
 		// take a lock on the instance of SharedData using lock1
-		// 2 MARKS
+		
 		synchronized(gameData.lock1) {			
 			
 			/* STEP-13: Specify condition */
 			// both players execute while the game is not complete
-			// 2 MARKS
+			
 			while(!gameData.gameCompleteFlag) {
 			
 				// STEP-14: both players should wait using lock1 of GameData until a number 
 				// is announced by the dealer or its not the chance of the player  
-				// 8 MARKS				  
+								  
 				while(!gameData.noAnnouncedFlag || gameData.playerChanceFlag[id]) {
 					try {
 						gameData.lock1.wait();
@@ -85,7 +85,7 @@ public class Player implements Runnable {
 					// if the number is found, the player increments the totalNumbersFound
 					// and set the back ground color of the button to GREEN using the following statement
 					// this.btnOnTicket[i].setBackground(Color.GREEN)
-					// 7 MARKS					
+										
 					for(int i = 0; i < MAXNO; i++) {						
 						if(gameData.announcedNumber == ticket[i]) {
 							this.totalNumbersFound++;							
@@ -96,7 +96,7 @@ public class Player implements Runnable {
 					
 					// STEP-16: player checks if it has won the game i.e., it has found all numbers
 					// then it should report success
-					// 4 MARKS
+					
 					if(this.totalNumbersFound == MAXNO) {
 						// player set the success flag 
 						gameData.playerSuccessFlag[this.id] = true;						
@@ -106,7 +106,7 @@ public class Player implements Runnable {
 					gameData.playerChanceFlag[id] = true;
 					
 					// STEP-17: notify all others waiting on lock1 of GameData
-					// 2 MARKS
+					
 					gameData.lock1.notifyAll();
 				}
 			}
