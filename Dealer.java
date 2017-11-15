@@ -28,7 +28,7 @@ public class Dealer implements Runnable {
 			
 			while (!gameData.playerSuccessFlag[0] && !gameData.playerSuccessFlag[1]) {
 				
-				// set number announced flag to false before announcing the number
+				/// set number announced flag to false before announcing the number
 				gameData.noAnnouncedFlag = false;
 				
 				// set checked flag of both players as false before the number is announced
