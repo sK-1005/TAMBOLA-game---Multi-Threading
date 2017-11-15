@@ -1,6 +1,6 @@
 package P2012A7PSXXX;
 
-/************ DO NOT MODIFY THIS CODE *************/
+
 public class GameData {
 	public int announcedNumber = 0;	 
 	public boolean gameCompleteFlag = false;	
