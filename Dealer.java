@@ -1,4 +1,4 @@
-package P2012A7PSXXX;
+
 
 import javax.swing.JLabel;
 
